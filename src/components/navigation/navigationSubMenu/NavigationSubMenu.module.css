@@ -1,0 +1,32 @@
+.navigationSubMenuItem {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid lightgray;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  color: white;
+}
+
+.navigationSubMenuItem:hover {
+  border-bottom: 1px solid black;
+  color: rgba(0, 128, 128, 0.8);
+}
+
+.navigationSubMenuList {
+  position: absolute;
+  top: 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  background-color: rgba(0, 94, 149, 0.9);
+  width: 300px;
+  padding: 16px;
+}
