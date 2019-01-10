@@ -14,6 +14,7 @@ const Navigation = ({ navigationList }) => (
             subMenu={navigationListItem.subMenu}
             id={navigationListItem.id}
             lineClassName={styles.line}
+            isOpenSubMenu={navigationListItem.isOpenSubMenu}
           />
           {navigationListItem.isOpenSubMenu &&
             navigationListItem.subMenu.length > 0 && (

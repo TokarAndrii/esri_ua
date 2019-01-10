@@ -132,6 +132,13 @@ function navigationListReducer(
           ? { ...currentItem, isOpenSubMenu: !currentItem.isOpenSubMenu }
           : currentItem,
       );
+
+    case types.SET_ALL_NAVLIST_ITEM_IS_OPEN_SUBMENU_TO_FALSE:
+      return state.map(currentItem => ({
+        ...currentItem,
+        isOpenSubMenu: false,
+      }));
+
     default:
       return state;
   }

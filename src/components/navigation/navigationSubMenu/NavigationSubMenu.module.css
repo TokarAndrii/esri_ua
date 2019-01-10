@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   list-style-type: none;
-  color: white;
+  color: rgba(0, 0, 128, 0.75);
 }
 
 .navigationSubMenuItem:hover {
@@ -20,13 +20,14 @@
 
 .navigationSubMenuList {
   position: absolute;
-  top: 105px;
+  top: 103px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   list-style-type: none;
-  background-color: rgba(0, 94, 149, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
   width: 300px;
   padding: 16px;
+  border: 1px solid rgba(0, 128, 128, 0.8);
 }
