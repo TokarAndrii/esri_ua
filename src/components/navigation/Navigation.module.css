@@ -1,0 +1,49 @@
+.navigationList {
+  list-style-type: none;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: border 2s;
+  width: 160px;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.link:hover {
+  border-bottom: 0px;
+}
+
+.link:hover > .line {
+  width: 160px;
+}
+
+.line {
+  width: 0px;
+  height: 2px;
+  background-color: #005e95;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  transition: width 0.5s ease;
+  display: inline-block;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+}
+
+.activeNavLink {
+  color: rgba(0, 128, 128, 0.9);
+}

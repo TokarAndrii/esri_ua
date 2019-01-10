@@ -1,0 +1,47 @@
+.navigationList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  margin-left: 32px;
+  width: 180px;
+  position: relative;
+}
+
+.link:hover {
+  color: rgba(0, 128, 128, 0.9);
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+
+  width: 180px;
+}
+
+.arrowHolder {
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  transition: transform 1s;
+}
+
+.link:hover > .arrowHolder {
+  visibility: visible;
+  transform: translate(24px);
+}

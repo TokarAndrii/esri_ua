@@ -1,0 +1,117 @@
+.app {
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.header {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: rgba(0, 0, 128, 0.75);
+  font-size: 1.1rem;
+}
+
+/*.logoImg{
+  background-color: rgb(70, 240, 240);
+}*/
+
+.footer {
+  display: inline-block;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.9);
+  padding-top: 10px;
+  padding-bottom: 16px;
+}
+
+.footerSocialsLinksHolder,
+.footerEmailUsHolder,
+.footerLinksHolder {
+  padding: 0;
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footerEmailUsHolder,
+.footerLinksHolder {
+  margin-left: 5vw;
+}
+
+.footerSocialsLinksHolderTitle {
+  margin: 0;
+  margin-bottom: 10px;
+  color: rgba(0, 128, 128, 0.9);
+}
+
+.line {
+  width: 100%;
+  height: 0.3vh;
+  border: 1px solid black;
+  background-image: linear-gradient(90deg, #29bfff, #a231ff, #0deccd, #29bfff);
+  background-repeat: repeat-x;
+  background-size: 133vw 200px;
+  -webkit-animation: b 4s linear infinite;
+  animation: b 4s linear infinite;
+}
+@-webkit-keyframes b {
+  0% {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 133vw;
+  }
+}
+
+@keyframes b {
+  0% {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 133vw;
+  }
+}
+
+.footerNavLinksHolder {
+  display: block;
+}
+
+.footerLinksHolder:nth-child(4) {
+  width: 200px;
+}
+
+.footerRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.footerRow:last-child {
+  border-top: 1px solid #fff;
+  padding-top: 8px;
+}
+
+.footerLink {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  padding-bottom: 4px;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
