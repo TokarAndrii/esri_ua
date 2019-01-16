@@ -1,12 +1,5 @@
 export default [
   {
-    name: 'Головна',
-    id: '5',
-    path: '/',
-    subMenu: [],
-    isOpenSubMenu: false,
-  },
-  {
     name: 'Проекти',
     id: '1',
     path: '/projects',

@@ -5,6 +5,10 @@ import HomePage from '../../pages/home_page/HomePage';
 import AboutPage from '../../pages/about_company_page/AboutPage';
 import MailUsPage from '../../pages/mail-us/MailUsPage';
 import Ecology from '../../pages/ecology/Ecology';
+import CartographyPage from '../../pages/cartography/CartographyPage';
+import BusinessPage from '../../pages/business/BusinessPage';
+import ArcGisPage from '../../pages/arcgis-page/ArcGisPage';
+import EnviPage from '../../pages/envi-page/EnviPage';
 import PageNotFound from '../../pages/page_not_found/PageNotFound';
 
 import Header from '../header/Header';
@@ -35,22 +39,13 @@ const App = () => (
       <Route path="/about" component={AboutPage} />
       <Route path="/mail-us" component={MailUsPage} />
       <Route path="/ecology" component={Ecology} />
+      <Route path="/cartography" component={CartographyPage} />
+      <Route path="/business" component={BusinessPage} />
+      <Route path="/arc-gis" component={ArcGisPage} />
+      <Route path="/envi" component={EnviPage} />
       <Route component={PageNotFound} />
     </Switch>
-    <img src="https://via.placeholder.com/700x460" alt="appPageBanner" />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic cumque
-      animi. Nobis fugit, sint esse optio facere perspiciatis velit? Eos
-      molestiae obcaecati reiciendis doloremque dolore ducimus, neque
-      praesentium quasi deleniti, velit facere odit magni necessitatibus sed
-      fugit! Minus dicta a at quo, dignissimos vitae consequuntur. Tempore
-      asperiores quo aliquid a, consequuntur iure voluptates aut ipsa vel
-      accusamus blanditiis nam adipisci provident! Perspiciatis vitae laboriosam
-      inventore cupiditate nisi voluptate, odio dolorum adipisci nostrum quo
-      distinctio enim asperiores eius sunt ea suscipit, sint omnis delectus
-      dolore voluptas aliquam tempora possimus, officia neque! Quisquam fugit
-      tenetur veritatis, unde maxime sint beatae excepturi?
-    </p>
+
     <div className={styles.line} />
     <Footer className={styles.footer}>
       <div className={styles.footerRow}>
