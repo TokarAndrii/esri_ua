@@ -9,7 +9,7 @@ import PageNotFound from '../../pages/page_not_found/PageNotFound';
 
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-import Navigation from '../navigation/Navigation';
+import Navigation from '../navigation/NavigationContainer';
 import FooterNavigation from '../footerNavigation/FooterNavigation';
 
 import SocialIcon from '../footer/socialsIcons/SocialIconComponent';
@@ -22,7 +22,11 @@ const App = () => (
   <div className={styles.app}>
     <Header className={styles.header}>
       <Link to="/">
-        <img alt="logo" src="/images/esri.svg" className={styles.logoImg} />
+        <img
+          alt="logo"
+          src="/images/logo_small.png"
+          className={styles.logoImg}
+        />
       </Link>
       <Navigation navigationList={navList} />
     </Header>

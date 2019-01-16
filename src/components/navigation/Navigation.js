@@ -14,10 +14,12 @@ const Navigation = ({ navigationList }) => (
             subMenu={navigationListItem.subMenu}
             id={navigationListItem.id}
             lineClassName={styles.line}
+            isOpenSubMenu={navigationListItem.isOpenSubMenu}
           />
-          {navigationListItem.isOpenSubMenu && (
-            <NavigationSubMenu list={navigationListItem.subMenu} />
-          )}
+          {navigationListItem.isOpenSubMenu &&
+            navigationListItem.subMenu.length > 0 && (
+              <NavigationSubMenu list={navigationListItem.subMenu} />
+            )}
         </li>
       ))}
     </ul>

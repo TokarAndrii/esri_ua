@@ -9,7 +9,7 @@ const NavigationSubMenu = ({ list }) => (
         <Link
           className={styles.navigationSubMenuItem}
           to={navigationListItem.path}
-          exact
+          exact="true"
         >
           {navigationListItem.name}
         </Link>
