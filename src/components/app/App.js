@@ -9,6 +9,8 @@ import CartographyPage from '../../pages/cartography/CartographyPage';
 import BusinessPage from '../../pages/business/BusinessPage';
 import ArcGisPage from '../../pages/arcgis-page/ArcGisPage';
 import EnviPage from '../../pages/envi-page/EnviPage';
+import TechSupportPage from '../../pages/tech-support-page/TechSupportPage';
+import ActualNews from '../../pages/actual-news-page/ActualNewsPageContainer';
 import PageNotFound from '../../pages/page_not_found/PageNotFound';
 
 import Header from '../header/Header';
@@ -43,6 +45,8 @@ const App = () => (
       <Route path="/business" component={BusinessPage} />
       <Route path="/arc-gis" component={ArcGisPage} />
       <Route path="/envi" component={EnviPage} />
+      <Route path="/tech-support" component={TechSupportPage} />
+      <Route path="/actual-news" component={ActualNews} />
       <Route component={PageNotFound} />
     </Switch>
 

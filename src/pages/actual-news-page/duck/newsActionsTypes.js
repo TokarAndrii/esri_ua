@@ -1,0 +1,8 @@
+const FETCH_START = '[news]/FETCH_START';
+
+const FETCH_SUCCESS_ACTUAL_NEWS = '[news]/FETCH_SUCCESS_ACTUAL_NEWS';
+
+export default {
+  FETCH_START,
+  FETCH_SUCCESS_ACTUAL_NEWS,
+};

@@ -81,9 +81,15 @@ export default [
   {
     name: 'Технічна підтримка',
     id: '3',
-    path: '/tech-support',
+    path: '/',
     isOpenSubMenu: false,
-    subMenu: [],
+    subMenu: [
+      {
+        name: 'Загальні запитання',
+        id: '31',
+        path: '/tech-support',
+      },
+    ],
   },
   {
     name: 'Про компанію',

@@ -74,18 +74,24 @@ const INITIAL_NAVLIST = [
         path: '/actual-news',
       },
       {
-        name: 'Події в світі ГІС',
+        name: 'Ахів',
         id: '62',
-        path: '/events-world-gis-news',
+        path: '/archive-news',
       },
     ],
   },
   {
     name: 'Технічна підтримка',
     id: '3',
-    path: '/tech-support',
+    path: '/',
     isOpenSubMenu: false,
-    subMenu: [],
+    subMenu: [
+      {
+        name: 'Загальні запитання',
+        id: '31',
+        path: '/tech-support',
+      },
+    ],
   },
   {
     name: 'Про компанію',
