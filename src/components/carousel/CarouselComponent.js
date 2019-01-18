@@ -2,13 +2,15 @@ import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
-const CarouselComponent = ({ img1, img2, img3, img4 }) => (
+const CarouselComponent = ({ classname, img1, img2, img3, img4 }) => (
   <Carousel
+    className={classname}
     autoPlay
     infiniteLoop
-    interval="5000"
-    transitionTime="1000"
+    interval={8000}
+    transitionTime={3000}
     showIndicators={false}
+    showStatus={false}
   >
     <div>
       <img src={img1} alt="image_carousel_1" />

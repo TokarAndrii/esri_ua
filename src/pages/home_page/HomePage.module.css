@@ -9,3 +9,16 @@
 .content {
   width: 80vw;
 }
+
+.carousel {
+  width: 1800px;
+  margin-left: -8%;
+}
+
+@media screen and (max-width: 112.5rem) {
+  .carousel {
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+  }
+}

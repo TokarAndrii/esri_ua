@@ -10,3 +10,8 @@
 .content {
   width: 80vw;
 }
+
+.image {
+  margin-bottom: 32px;
+  display: block;
+}

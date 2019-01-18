@@ -7,6 +7,7 @@ const HomePage = () => (
     <h1>Home Page esri ua</h1>
     <div className={styles.content}>
       <Carousel
+        classname={styles.carousel}
         img1="https://placeimg.com/1950/680/tech"
         img2="https://placeimg.com/1950/680/people"
         img3="https://placeimg.com/1950/680/arch"
