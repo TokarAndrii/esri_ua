@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080/api/v1/sendmail';
+// const BASE_URL = '192.168.0.53:9091/api/v1/sendmail';
 
 const axiosConfig = {
   headers: {
@@ -10,11 +10,12 @@ const axiosConfig = {
 };
 
 const sendDataToBackEnd = data => {
-  console.log('sendDataToBackEnd');
+  console.log(data, ' - sendDataToBackEnd');
   return axios
-    .post(`${BASE_URL}`, data, axiosConfig)
+    .post('http://192.168.0.53:9091/api/v1/sendmail', data, axiosConfig)
     .then(resp => resp)
     .catch(err => {
+      console.log(err.response.data);
       throw err;
     });
 };

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './SocialIconComponent.module.css';
 
-export default class SocialIconComponent extends Component {
+export default class SocialIconComponentMail extends Component {
   state = { img: '' };
 
   componentDidMount() {
@@ -23,12 +23,7 @@ export default class SocialIconComponent extends Component {
     const { img } = this.state;
     const { to } = this.props;
     return (
-      <a
-        href={to}
-        style={{ display: 'table-cell' }}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href={to}>
         <img
           className={styles.socialIcon}
           style={{ width: '24px', height: '24px' }}

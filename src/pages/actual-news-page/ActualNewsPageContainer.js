@@ -16,6 +16,7 @@ class ActualNewsPageContainer extends Component {
 
 const mstp = state => ({
   actualNews: state.actualNews,
+  isLoading: state.isLoading,
 });
 
 const mdtp = {

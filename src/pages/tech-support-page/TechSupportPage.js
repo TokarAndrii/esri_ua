@@ -53,7 +53,12 @@ const TechSupportPage = () => (
         Esri надає великі можливості для розвитку своїх користувачів, регулярно
         проводячи різноманітні заходи для навчання, в тому числі й безкоштовні
         семінари та веб-курси. Ви можете більше дізнатися про це на ресурсі
-        <a className={styles.pageLink} href="/images/help.png">
+        <a
+          className={styles.pageLink}
+          href="https://www.esri.com/training/ "
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           тренінгу
         </a>{' '}
         .

@@ -1,8 +1,14 @@
 import React from 'react';
 
-const ErrorMessage = ({ className, closeBtnClassName, message }) => (
+const ErrorMessage = ({ className, closeBtnClassName, message, onClose }) => (
   <div className={className}>
-    <span className={closeBtnClassName}>&times;</span>
+    <span
+      className={closeBtnClassName}
+      onClick={onClose}
+      onKeyPress={() => null}
+    >
+      &times;
+    </span>
     <p>
       <strong>Error! </strong>message not sent! {message} Check all fields to be
       inputted correct.

@@ -73,6 +73,7 @@
   opacity: 1;
   transition: opacity 0.6s;
   margin-left: 34%;
+  margin-bottom: 32px;
 }
 
 .error {
@@ -84,6 +85,7 @@
   opacity: 1;
   transition: opacity 0.6s;
   margin-left: 34%;
+  margin-bottom: 32px;
 }
 
 .closebtn {

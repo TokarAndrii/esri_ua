@@ -7,8 +7,8 @@ const CarouselComponent = ({ classname, img1, img2, img3, img4 }) => (
     className={classname}
     autoPlay
     infiniteLoop
-    interval={8000}
-    transitionTime={3000}
+    interval={15000}
+    transitionTime={5000}
     showIndicators={false}
     showStatus={false}
   >

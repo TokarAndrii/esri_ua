@@ -5,10 +5,11 @@ import SuccessMessage from './success/SuccessMessage';
 import styles from './MailUsForm.module.css';
 
 const INITIAL_STATE = {
-  user: '',
-  email: '',
+  initials: '',
+  emailOfUser: '',
   subject: '',
-  message: '',
+  text: '',
+  phoneNumber: '',
   error: { isError: false, status: '', data: '' },
   success: { isSuccess: false, status: '', data: '' },
 };
@@ -27,15 +28,9 @@ export default class MailUsForm extends Component {
 
   handleSubmitForm = e => {
     e.preventDefault();
-    const { user, email, subject, message } = this.state;
-    const data = {
-      user,
-      subject,
-      email,
-      message,
-    };
+    const { initials, emailOfUser, subject, text, phoneNumber } = this.state;
 
-    sendDataToBackEnd(data)
+    sendDataToBackEnd({ initials, emailOfUser, subject, text, phoneNumber })
       .then(resp => {
         if (resp.status === 200) {
           this.setState({
@@ -52,7 +47,15 @@ export default class MailUsForm extends Component {
 
   render() {
     const { formTitle } = this.props;
-    const { user, email, subject, message, error, success } = this.state;
+    const {
+      initials,
+      emailOfUser,
+      subject,
+      text,
+      error,
+      success,
+      phoneNumber,
+    } = this.state;
     const { isError, data } = error;
     const { isSuccess } = success;
 
@@ -66,10 +69,10 @@ export default class MailUsForm extends Component {
             </b>
             <input
               type="text"
-              name="user"
+              name="initials"
               placeholder="Ім'я"
               className={styles.input}
-              value={user}
+              value={initials}
               onChange={this.handleChangeInput}
             />
           </label>
@@ -79,10 +82,23 @@ export default class MailUsForm extends Component {
             </b>
             <input
               type="email"
-              name="email"
+              name="emailOfUser"
               placeholder="Е-mail"
               className={styles.input}
-              value={email}
+              value={emailOfUser}
+              onChange={this.handleChangeInput}
+            />
+          </label>
+          <label className={styles.label}>
+            <b className={styles.title}>
+              <img src="images/icons/phone.png" alt="phone-icon" />
+            </b>
+            <input
+              type="text"
+              name="phoneNumber"
+              placeholder="Номер телефону"
+              className={styles.input}
+              value={phoneNumber}
               onChange={this.handleChangeInput}
             />
           </label>
@@ -107,8 +123,8 @@ export default class MailUsForm extends Component {
               cols="100"
               rows="10"
               className={styles.textArea}
-              name="message"
-              value={message}
+              name="text"
+              value={text}
               onChange={this.handleChangeInput}
               placeholder="Напишіть ваше звернення тут"
             />

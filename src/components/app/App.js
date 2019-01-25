@@ -11,28 +11,26 @@ import ArcGisPage from '../../pages/arcgis-page/ArcGisPage';
 import EnviPage from '../../pages/envi-page/EnviPage';
 import TechSupportPage from '../../pages/tech-support-page/TechSupportPage';
 import ActualNews from '../../pages/actual-news-page/ActualNewsPageContainer';
+import ActualNewsItemPage from '../../pages/actual-news-item-page/ActualNewsItemPage';
 import PageNotFound from '../../pages/page_not_found/PageNotFound';
 
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import Navigation from '../navigation/NavigationContainer';
-import FooterNavigation from '../footerNavigation/FooterNavigation';
 
 import SocialIcon from '../footer/socialsIcons/SocialIconComponent';
+import SocialIconComponentMail from '../footer/socialsIcons/SocialIconComponentMail';
 
 import navList from '../../assets/navList';
 
+import logo from './esri_site_230x70.svg';
 import styles from './App.module.css';
 
 const App = () => (
   <div className={styles.app}>
     <Header className={styles.header}>
       <Link to="/">
-        <img
-          alt="logo"
-          src="/images/logo_small.png"
-          className={styles.logoImg}
-        />
+        <img alt="logo" src={logo} className={styles.logoImg} />
       </Link>
       <Navigation navigationList={navList} />
     </Header>
@@ -46,7 +44,8 @@ const App = () => (
       <Route path="/arc-gis" component={ArcGisPage} />
       <Route path="/envi" component={EnviPage} />
       <Route path="/tech-support" component={TechSupportPage} />
-      <Route path="/actual-news" component={ActualNews} />
+      <Route exact path="/actual-news" component={ActualNews} />
+      <Route path="/actual-news/:id" component={ActualNewsItemPage} />
       <Route component={PageNotFound} />
     </Switch>
 
@@ -60,7 +59,7 @@ const App = () => (
           <SocialIcon
             iconImgUrl="/images/icons/facebook.png"
             iconImgUrlHover="/images/icons/facebookHover.png"
-            to="/"
+            to="https://www.facebook.com/EsriUkraine/"
           />
           <SocialIcon
             iconImgUrl="/images/icons/instagram.png"
@@ -92,7 +91,7 @@ const App = () => (
           <h4 className={styles.footerSocialsLinksHolderTitle}>
             Написати листа:
           </h4>
-          <SocialIcon
+          <SocialIconComponentMail
             iconImgUrl="/images/icons/email.png"
             iconImgUrlHover="/images/icons/emailHover.png"
             to="/mail-us"
@@ -130,9 +129,7 @@ const App = () => (
           </Link>
         </div>
       </div>
-      <div className={styles.footerRow}>
-        <FooterNavigation navigationList={navList} />
-      </div>
+
       <div className={styles.footerRow}>Esri Україна 2019</div>
     </Footer>
   </div>
