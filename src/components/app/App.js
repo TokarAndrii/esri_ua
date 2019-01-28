@@ -2,7 +2,6 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 
 import HomePage from '../../pages/home_page/HomePage';
-import AboutPage from '../../pages/about_company_page/AboutPage';
 import MailUsPage from '../../pages/mail-us/MailUsPage';
 import Ecology from '../../pages/ecology/Ecology';
 import CartographyPage from '../../pages/cartography/CartographyPage';
@@ -10,8 +9,11 @@ import BusinessPage from '../../pages/business/BusinessPage';
 import ArcGisPage from '../../pages/arcgis-page/ArcGisPage';
 import EnviPage from '../../pages/envi-page/EnviPage';
 import TechSupportPage from '../../pages/tech-support-page/TechSupportPage';
+import StudyPage from '../../pages/study/StuduPage';
 import ActualNews from '../../pages/actual-news-page/ActualNewsPageContainer';
+import ContactsPage from '../../pages/contactsPage/ContactsPage';
 import ActualNewsItemPage from '../../pages/actual-news-item-page/ActualNewsItemPage';
+import AboutEsriPage from '../../pages/aboutEsriCompany/AboutEsriCompany';
 import PageNotFound from '../../pages/page_not_found/PageNotFound';
 
 import Header from '../header/Header';
@@ -36,13 +38,15 @@ const App = () => (
     </Header>
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route path="/about" component={AboutPage} />
+      <Route path="/contacts" component={ContactsPage} />
+      <Route path="/esri-ukraine" component={AboutEsriPage} />
       <Route path="/mail-us" component={MailUsPage} />
       <Route path="/ecology" component={Ecology} />
       <Route path="/cartography" component={CartographyPage} />
       <Route path="/business" component={BusinessPage} />
       <Route path="/arc-gis" component={ArcGisPage} />
       <Route path="/envi" component={EnviPage} />
+      <Route path="/study" component={StudyPage} />
       <Route path="/tech-support" component={TechSupportPage} />
       <Route exact path="/actual-news" component={ActualNews} />
       <Route path="/actual-news/:id" component={ActualNewsItemPage} />

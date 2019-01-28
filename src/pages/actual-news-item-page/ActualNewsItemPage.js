@@ -38,20 +38,20 @@ class ActualNewsItemPage extends Component {
 
     return (
       <>
+        <Link to="/actual-news" className={styles.addNewsPageLinkHolder}>
+          <img
+            className={styles.addNewsPageLinkIcon}
+            src={news}
+            alt="home_icon"
+          />
+          <span className={styles.addNewstext}>До новин</span>
+        </Link>
         {isLoading && (
           <Loader type="Puff" color="#00BFFF" height="100" width="100" />
         )}
 
         <div className={styles.holder}>
           <div className={styles.content}>
-            <Link to="/actual-news" className={styles.addNewsPageLinkHolder}>
-              <img
-                className={styles.addNewsPageLinkIcon}
-                src={news}
-                alt="home_icon"
-              />
-              <span className={styles.addNewstext}>До новин</span>
-            </Link>
             <h3 className={styles.newsItemTitle}>
               {title}
               <div className={styles.separator} />

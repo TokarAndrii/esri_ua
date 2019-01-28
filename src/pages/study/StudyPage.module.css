@@ -30,6 +30,12 @@
   height: 3px;
   margin: 30px auto;
   margin-top: -10px;
-  margin-left: 45%;
+  margin-left: 25%;
   width: 60px;
+}
+
+.textPage {
+  text-align: left;
+  text-indent: 1.5em;
+  margin-bottom: 32px;
 }

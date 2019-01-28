@@ -10,6 +10,10 @@
 
 .content {
   width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .image {
@@ -21,6 +25,7 @@
   text-align: left;
   text-indent: 1.5em;
   margin-bottom: 32px;
+  width: 60vw;
 }
 
 .separator {
@@ -46,7 +51,7 @@
   align-items: center;
   flex-direction: row;
   text-decoration: none;
-  margin-right: -100px;
+  margin-right: 50px;
   margin-top: -50px;
   color: white;
 }
