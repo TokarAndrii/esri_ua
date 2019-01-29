@@ -14,8 +14,13 @@ const FETCH_SUCCESS_ACTUAL_NEWS_ITEM_BY_ID = newsItem => ({
   payload: [...newsItem],
 });
 
+const FETCH_ERROR_ACTUAL_NEWS = () => ({
+  type: newsTypes.FETCH_ERROR_ACTUAL_NEWS,
+});
+
 export default {
   FETCH_START,
   FETCH_SUCCESS_ACTUAL_NEWS,
   FETCH_SUCCESS_ACTUAL_NEWS_ITEM_BY_ID,
+  FETCH_ERROR_ACTUAL_NEWS,
 };

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
+import { connect } from 'react-redux';
 import Carousel from '../../components/carousel/CarouselComponent';
 import NewsItem from '../../components/news-item/NewsItem';
+import newsOperations from '../actual-news-page/duck/newsOperations';
+import carouselOperations from '../../redux/carouselImagesOperations';
 import styles from './HomePage.module.css';
 
 const INITIAL_STATE = {
@@ -10,7 +13,7 @@ const INITIAL_STATE = {
   preview: '',
   images: [],
   idNewsItem: '',
-  isLoading: '',
+  isLoading: 'false',
 };
 
 class HomePage extends Component {
@@ -18,10 +21,11 @@ class HomePage extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
+    const { setErrorNewsfetching, fetchAllCarouselImages } = this.props;
+    fetchAllCarouselImages();
     axios
       .get('http://192.168.0.53:9091/api/v1/news/all/?limit=1')
       .then(resp => {
-        console.log(resp.data.data[0]);
         const { id, title, newsImages, preview } = resp.data.data[0];
         return this.setState({
           isLoading: false,
@@ -30,23 +34,22 @@ class HomePage extends Component {
           images: newsImages,
           idNewsItem: id,
         });
+      })
+      .catch(() => {
+        setErrorNewsfetching();
+        this.setState({ isLoading: false });
       });
   }
 
   render() {
     const { title, preview, idNewsItem, images, isLoading } = this.state;
+    const { isError, carouselImages } = this.props;
     return (
       <div className={styles.holder}>
         <h1>Home Page esri ua</h1>
         <div className={styles.content}>
-          <Carousel
-            classname={styles.carousel}
-            img1="https://placeimg.com/1950/680/tech"
-            img2="https://placeimg.com/1950/680/people"
-            img3="https://placeimg.com/1950/680/arch"
-            img4="https://placeimg.com/1950/680/arch/sepia"
-          />
-          {isLoading && (
+          <Carousel classname={styles.carousel} images={carouselImages} />
+          {isLoading && !isError && (
             <Loader
               type="Bars"
               color="rgba(0, 0, 0, 0.7)"
@@ -54,16 +57,33 @@ class HomePage extends Component {
               width="80"
             />
           )}
-          <NewsItem
-            images={images}
-            title={title}
-            preview={preview}
-            idNewsItem={idNewsItem}
-          />
+
+          {isError !== '' ? (
+            <div className={styles.error}>{isError}</div>
+          ) : (
+            <NewsItem
+              images={images}
+              title={title}
+              preview={preview}
+              idNewsItem={idNewsItem}
+            />
+          )}
         </div>
       </div>
     );
   }
 }
+const mdtp = {
+  setErrorNewsfetching: newsOperations.fetchNewsError,
+  fetchAllCarouselImages: carouselOperations.fetchAllCarouselImages,
+};
 
-export default HomePage;
+const mstp = state => ({
+  isError: state.isError,
+  carouselImages: state.carouselImages,
+});
+
+export default connect(
+  mstp,
+  mdtp,
+)(HomePage);

@@ -1,8 +1,12 @@
 import types from './types';
 
-const GET_ALL_NAVLIST = () => ({
+const GET_ALL_NAVLIST = navList => ({
   type: types.GET_ALL_NAVLIST,
-  payload: null,
+  payload: navList,
+});
+
+const FETCH_START_GET_NAVIGATION_LIST = () => ({
+  type: types.FETCH_START_GET_NAVIGATION_LIST,
 });
 
 const TOGGLE_NAVLIST_ITEM_IS_OPEN_SUBMENU = id => ({
@@ -19,4 +23,5 @@ export default {
   GET_ALL_NAVLIST,
   TOGGLE_NAVLIST_ITEM_IS_OPEN_SUBMENU,
   SET_ALL_NAVLIST_ITEM_IS_OPEN_SUBMENU_TO_FALSE,
+  FETCH_START_GET_NAVIGATION_LIST,
 };

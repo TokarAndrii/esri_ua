@@ -13,6 +13,10 @@
   padding-bottom: 32px;
   width: 60vw;
   margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .newsItemTitle {
@@ -36,11 +40,19 @@
   display: inline-block;
   margin-bottom: 32px;
   transition: transform 1s;
-  width: 900px;
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+}
+
+.imageHolder {
+  overflow: hidden;
+  padding: 0;
+  max-width: 900px;
 }
 
 .image:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 .content {

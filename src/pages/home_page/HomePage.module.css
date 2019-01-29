@@ -15,10 +15,25 @@
   margin-left: -8%;
 }
 
+.error {
+  display: block;
+  color: red;
+  font-weight: bold;
+  padding: 32px;
+}
+
 @media screen and (max-width: 112.5rem) {
   .carousel {
     display: inline-block;
     width: auto;
     margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 22.5rem) {
+  .carousel {
+    display: inline-block;
+    width: 18rem;
+    margin-left: 0;
   }
 }

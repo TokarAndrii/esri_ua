@@ -19,7 +19,7 @@ const NewsItem = ({ images = [], title, preview, idNewsItem }) => (
             const { imageUrl, idOfNews, id, headerImage } = current;
             return (
               headerImage && (
-                <div key={id}>
+                <div key={id} className={styles.imageHolder}>
                   <img
                     key={idOfNews}
                     className={styles.image}
