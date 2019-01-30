@@ -1,11 +1,14 @@
 import axios from 'axios';
 import navigationListActions from './navigationListActions';
+import apiConfig from '../config';
+
+const { protocol, port, ip, rootUrl } = apiConfig;
 
 const fetchAllNavigationsList = () => dispatch => {
   dispatch(navigationListActions.FETCH_START_GET_NAVIGATION_LIST());
 
   axios
-    .get('http://192.168.0.53:9091/api/v1/headers/main_headers/all')
+    .get(`${protocol}://${ip}:${port}/${rootUrl}/headers/main_headers/all`)
     .then(resp =>
       dispatch(navigationListActions.GET_ALL_NAVLIST(resp.data.data)),
     )

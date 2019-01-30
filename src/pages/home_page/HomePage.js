@@ -6,6 +6,7 @@ import Carousel from '../../components/carousel/CarouselComponent';
 import NewsItem from '../../components/news-item/NewsItem';
 import newsOperations from '../actual-news-page/duck/newsOperations';
 import carouselOperations from '../../redux/carouselImagesOperations';
+import apiConfig from '../../config';
 import styles from './HomePage.module.css';
 
 const INITIAL_STATE = {
@@ -16,6 +17,8 @@ const INITIAL_STATE = {
   isLoading: 'false',
 };
 
+const { protocol, port, ip, rootUrl } = apiConfig;
+
 class HomePage extends Component {
   state = { ...INITIAL_STATE };
 
@@ -24,7 +27,7 @@ class HomePage extends Component {
     const { setErrorNewsfetching, fetchAllCarouselImages } = this.props;
     fetchAllCarouselImages();
     axios
-      .get('http://192.168.0.53:9091/api/v1/news/all/?limit=1')
+      .get(`${protocol}://${ip}:${port}/${rootUrl}/news/all/?limit=1`)
       .then(resp => {
         const { id, title, newsImages, preview } = resp.data.data[0];
         return this.setState({

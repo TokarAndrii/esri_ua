@@ -1,4 +1,5 @@
 .holder {
+  min-height: 66vh;
   width: 100%;
   display: flex;
   flex-direction: column;

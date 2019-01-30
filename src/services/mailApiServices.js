@@ -1,6 +1,7 @@
 import axios from 'axios';
+import apiConfig from '../config';
 
-// const BASE_URL = '192.168.0.53:9091/api/v1/sendmail';
+const { protocol, port, ip, rootUrl } = apiConfig;
 
 const axiosConfig = {
   headers: {
@@ -12,7 +13,7 @@ const axiosConfig = {
 const sendDataToBackEnd = data => {
   console.log(data, ' - sendDataToBackEnd');
   return axios
-    .post('http://192.168.0.53:9091/api/v1/sendmail', data, axiosConfig)
+    .post(`${protocol}://${ip}:${port}/${rootUrl}/sendmail`, data, axiosConfig)
     .then(resp => resp)
     .catch(err => {
       console.log(err.response.data);

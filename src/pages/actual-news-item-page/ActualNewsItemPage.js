@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import news from './news.png';
 import styles from './ActualNewsItemPage.module.css';
+import apiConfig from '../../config';
 
 const INITIAL_STATE = {
   content: '',
@@ -11,6 +12,8 @@ const INITIAL_STATE = {
   newsImages: [],
   isLoading: false,
 };
+
+const { protocol, port, ip, rootUrl } = apiConfig;
 
 class ActualNewsItemPage extends Component {
   state = { ...INITIAL_STATE };
@@ -20,9 +23,7 @@ class ActualNewsItemPage extends Component {
     const { params } = match;
     const { id } = params;
 
-    console.log(id, ' id');
-
-    axios.get(`http://192.168.0.53:9091/api/v1/news/${id}`).then(resp =>
+    axios.get(`${protocol}://${ip}:${port}/${rootUrl}/news/${id}`).then(resp =>
       this.setState({
         content: resp.data.news.content,
         newsImages: resp.data.news.newsImages,

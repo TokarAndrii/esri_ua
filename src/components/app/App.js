@@ -25,7 +25,7 @@ import Navigation from '../navigation/NavigationContainer';
 import SocialIcon from '../footer/socialsIcons/SocialIconComponent';
 import SocialIconComponentMail from '../footer/socialsIcons/SocialIconComponentMail';
 
-import navList from '../../assets/navList';
+// import navList from '../../assets/navList';
 
 import logo from './esri_site_230x70.svg';
 import styles from './App.module.css';
@@ -37,13 +37,14 @@ class App extends Component {
   }
 
   render() {
+    const { navigationList } = this.props;
     return (
       <div className={styles.app}>
         <Header className={styles.header}>
           <Link to="/">
             <img alt="logo" src={logo} className={styles.logoImg} />
           </Link>
-          <Navigation navigationList={navList} />
+          <Navigation navigationList={navigationList} />
         </Header>
         <Switch>
           <Route exact path="/" component={HomePage} />
@@ -153,7 +154,11 @@ const mdtp = {
   handleFetchNavList: navigationsOperations.fetchAllNavigationsList,
 };
 
+const mstp = state => ({
+  navigationList: state.navigationList,
+});
+
 export default connect(
-  null,
+  mstp,
   mdtp,
 )(App);
